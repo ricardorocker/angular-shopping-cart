@@ -103,5 +103,8 @@
       }
     }
   },
-  "defaultProject": "devskiller-angular-shopping-cart"
+  "defaultProject": "devskiller-angular-shopping-cart",
+  "cli": {
+    "analytics": false
+  }
 }
