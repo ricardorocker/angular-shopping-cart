@@ -25,7 +25,7 @@ export class CartService {
 
   getStoredCartItems() {
     this.dataService.fetchAll().subscribe((items: CartItem[]) => {
-      this.updateCartState({ items, total: this.calculateTotal(items) })
+      this.setCartItems(items)
     })
   }
 
@@ -46,10 +46,7 @@ export class CartService {
       this.getItems().push(newItem);
     }
 
-    const items = this.getItems();
-    const total = this.calculateTotal(this.getItems());
-
-    this.updateCartState({ items, total })
+    this.setCartItems(this.getItems())
   }
 
   removeProduct(product: Product, shouldRemoveAll = false) {
@@ -74,6 +71,13 @@ export class CartService {
 
   protected getProducts() {
     return this._products;
+  }
+
+  protected setCartItems(items: CartItem[]) {
+    const total = this.calculateTotal(items)
+    const products = { items, total };
+
+    this.updateCartState(products);
   }
 
   getItems() {
