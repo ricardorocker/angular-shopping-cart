@@ -17,7 +17,7 @@ import { CartService } from "../../services/cart.service";
   styleUrls: ["cart-item-control.component.css"],
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class CartItemControlComponent implements OnInit {
+export class CartItemControlComponent implements OnInit, OnDestroy {
   @Input() product: Product;
 
   item: CartItem;
@@ -32,5 +32,9 @@ export class CartItemControlComponent implements OnInit {
       .subscribe((item) => {
         this.item = item;
       });
+  }
+
+  ngOnDestroy() {
+    this.cartItem$.unsubscribe();
   }
 }
