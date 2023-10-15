@@ -37,7 +37,7 @@ export class CartService {
       this.calculateSubtotal(existingItem)
     } else {
       const newItem: CartItem = {
-        id: this.getItems().length + 1,
+        id: product.id,
         amount: 1,
         product: product,
         subtotal: product.price
@@ -91,7 +91,6 @@ export class CartService {
 
     this.updateCartState(products);
   }
-
 
   getItems() {
     return this.getProducts().items;
