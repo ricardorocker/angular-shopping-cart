@@ -19,7 +19,6 @@ export class CartService {
 
   protected _cartState = new Subject<CartProducts>();
 
-
   constructor(
     protected dataService: CartDataService,
   ) { }
@@ -31,7 +30,26 @@ export class CartService {
   }
 
   addProduct(product: Product) {
+    const existingItem = this.getItems().find(item => item.product.id === product.id)
 
+    if (existingItem) {
+      existingItem.amount++;
+      this.calculateSubtotal(existingItem)
+    } else {
+      const newItem: CartItem = {
+        id: this.getItems().length + 1,
+        amount: 1,
+        product: product,
+        subtotal: product.price
+      }
+
+      this.getItems().push(newItem);
+    }
+
+    const items = this.getItems();
+    const total = this.calculateTotal(this.getItems());
+
+    this.updateCartState({ items, total })
   }
 
   removeProduct(product: Product, shouldRemoveAll = false) {
