@@ -50,7 +50,19 @@ export class CartService {
   }
 
   removeProduct(product: Product, shouldRemoveAll = false) {
+    const existingItem = this.getItems().find((item) => item.product.id === product.id);
 
+    if (!existingItem) return;
+
+    if (shouldRemoveAll || existingItem.amount === 1) {
+      const index = this.getItems().indexOf(existingItem);
+      if (index !== -1) this.getItems().splice(index, 1);
+    } else {
+      existingItem.amount--;
+      this.calculateSubtotal(existingItem);
+    }
+
+    this.setCartItems(this.getItems());
   }
 
   //HELPER METHODS
@@ -79,6 +91,7 @@ export class CartService {
 
     this.updateCartState(products);
   }
+
 
   getItems() {
     return this.getProducts().items;
