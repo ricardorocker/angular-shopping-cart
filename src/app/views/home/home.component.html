@@ -2,21 +2,51 @@
   <div class="col">
     <products-list [products]="products$ | async">
       <ng-container *forProduct="let product; ofType: 'default'">
-        <div class="product-image"></div>
-        <h4>{{ product.name }} (custom default)</h4>
-        <cart-item-control [product]="product"></cart-item-control>
+        <div class="col mb-4">
+          <div class="card text-center shadow p-3 mb-5">
+            <div class="card-body">
+              <div class="card-text" style="min-height: 48px;">
+                {{ product.name }} (custom default)
+              </div>
+              <div class="card-title h3">
+                {{ product.price }}€
+              </div>
+              <cart-item-control [product]="product"></cart-item-control>
+            </div>
+          </div>
+        </div>
       </ng-container>
 
       <ng-container *forProduct="let product; ofType: 'promo'">
-        <div class="product-image"></div>
-        <h4>{{ product.name }} ({{ product.type }})</h4>
-        <cart-item-control [product]="product"></cart-item-control>
+        <div class="col mb-4">
+          <div class="card text-center shadow p-3 mb-5">
+            <div class="card-body">
+              <div class="card-text" style="min-height: 48px;">
+                {{ product.name }} ({{ product.type }})
+              </div>
+              <div class="card-title h3">
+                {{ product.price }}€
+              </div>
+              <cart-item-control [product]="product"></cart-item-control>
+            </div>
+          </div>
+        </div>
       </ng-container>
 
       <ng-container *forProduct="let product; ofType: 'outlet'">
-        <div class="product-image"></div>
-        <h4>{{ product.name }} ({{ product.type }})</h4>
-        <cart-item-control [product]="product"></cart-item-control>
+        <div class="col mb-4">
+          <div class="card text-center shadow p-3 mb-5">
+            <div class="card-body">
+              <div class="card-text" style="min-height: 48px;">
+                {{ product.name }} ({{ product.type }})
+              </div>
+              <div class="card-title h3">
+                {{ product.price }}€
+              </div>
+              <cart-item-control [product]="product"></cart-item-control>
+            </div>
+          </div>
+        </div>
       </ng-container>
     </products-list>
   </div>
@@ -30,3 +60,4 @@
     </div>
   </div>
 </div>
+
