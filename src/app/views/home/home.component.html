@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col">
+  <div class="col-md-8">
     <products-list [products]="products$ | async">
       <ng-container *forProduct="let product; ofType: 'default'">
         <div class="col mb-4">
-          <div class="card text-center shadow p-3 mb-5">
+          <div class="card card-hover text-center shadow p-3 mb-5">
             <div class="card-body p-2">
               <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} (custom default)
@@ -19,7 +19,7 @@
 
       <ng-container *forProduct="let product; ofType: 'promo'">
         <div class="col mb-4">
-          <div class="card text-center shadow p-3 mb-5">
+          <div class="card card-hover text-center shadow p-3 mb-5">
             <div class="card-body p-2">
               <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} ({{ product.type }})
@@ -35,7 +35,7 @@
 
       <ng-container *forProduct="let product; ofType: 'outlet'">
         <div class="col mb-4">
-          <div class="card text-center shadow p-3 mb-5">
+          <div class="card card-hover text-center shadow p-3 mb-5">
             <div class="card-body p-2">
               <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} ({{ product.type }})
@@ -51,14 +51,21 @@
     </products-list>
   </div>
   <hr />
-  <div class="col-4 pl-5">
+  <div class="col-md-4">
     <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-dark font-weight-bold">Cart Items</h4>
-        <hr>
+      <div class="card-body pb-0">
+        <div class="d-flex  justify-content-between  align-items-start">
+          <h4 class="card-title text-dark font-weight-bold">Cart Items</h4>
+          <button class="btn trash d-flex align-items-center p-0" (click)="cart.clearAll()">
+            <img src="../../../assets/trash.svg" width="12px">
+            <span class="clear-all pl-1">
+              clear all
+            </span>
+          </button>
+        </div>
       </div>
+      <hr class="mt-2">
       <cart-widget></cart-widget>
     </div>
   </div>
 </div>
-

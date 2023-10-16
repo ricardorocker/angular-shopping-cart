@@ -65,6 +65,11 @@ export class CartService {
     this.setCartItems(this.getItems());
   }
 
+  clearAll() {
+    this.getItems().length = 0;
+    this.setCartItems(this.getItems());
+  }
+
   //HELPER METHODS
 
   protected updateCartState(products: CartProducts) {
