@@ -1,13 +1,14 @@
-<div *ngFor="let item of items$ | async">
-
-  <div class="row d-flex align-items-center">
-    <div class="col-2">
-      <button class="btn trash" (click)="cart.removeProduct(item.product, true)">
-        <img src="../../../assets/trash.svg" width="16px" alt="" srcset="">
-      </button>
+<div class="body">
+  <div *ngFor="let item of items$ | async">
+    <div class="row d-flex align-items-center">
+      <div class="col-3 pl-5">
+        <button class="btn trash" (click)="cart.removeProduct(item.product, true)">
+          <img src="../../../assets/trash.svg" width="16px" alt="" srcset="">
+        </button>
+      </div>
+      <div class="col-6">{{ item.amount }} x {{ item.product.name }}</div>
+      <div class="col-3 font-weight-bold text-dark">{{ item.subtotal }}€</div>
     </div>
-    <div class="col-6">{{ item.amount }} x {{ item.product.name }}</div>
-    <div class="col-4 font-weight-bold text-dark">{{ item.subtotal }}€</div>
   </div>
 </div>
 

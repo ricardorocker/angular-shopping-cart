@@ -1,3 +1,7 @@
+.body {
+  min-height: 220px;
+}
+
 .trash {
   top: -50px;
   left: -35px;

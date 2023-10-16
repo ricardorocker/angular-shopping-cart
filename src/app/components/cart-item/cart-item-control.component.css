@@ -1,7 +1,8 @@
 input {
   margin: 0 8px;
   text-align: center;
-  padding: 8px 0;
+  padding: 0;
+  max-height: 45px;
 }
 
 .btn {
@@ -10,7 +11,7 @@ input {
 
 .font-signal {
   font-size: 28px;
-  padding: 1px 12px;
+  padding: 0px 12px;
 }
 
 .container {

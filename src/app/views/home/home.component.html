@@ -4,11 +4,11 @@
       <ng-container *forProduct="let product; ofType: 'default'">
         <div class="col mb-4">
           <div class="card text-center shadow p-3 mb-5">
-            <div class="card-body">
-              <div class="card-text" style="min-height: 48px;">
+            <div class="card-body p-2">
+              <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} (custom default)
               </div>
-              <div class="card-title h3">
+              <div class="card-title h3 mb-4">
                 {{ product.price }}€
               </div>
               <cart-item-control [product]="product"></cart-item-control>
@@ -20,11 +20,11 @@
       <ng-container *forProduct="let product; ofType: 'promo'">
         <div class="col mb-4">
           <div class="card text-center shadow p-3 mb-5">
-            <div class="card-body">
-              <div class="card-text" style="min-height: 48px;">
+            <div class="card-body p-2">
+              <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} ({{ product.type }})
               </div>
-              <div class="card-title h3">
+              <div class="card-title h3 mb-4">
                 {{ product.price }}€
               </div>
               <cart-item-control [product]="product"></cart-item-control>
@@ -36,11 +36,11 @@
       <ng-container *forProduct="let product; ofType: 'outlet'">
         <div class="col mb-4">
           <div class="card text-center shadow p-3 mb-5">
-            <div class="card-body">
-              <div class="card-text" style="min-height: 48px;">
+            <div class="card-body p-2">
+              <div class="card-text h5 mb-2" style="min-height: 48px;">
                 {{ product.name }} ({{ product.type }})
               </div>
-              <div class="card-title h3">
+              <div class="card-title h3 mb-4">
                 {{ product.price }}€
               </div>
               <cart-item-control [product]="product"></cart-item-control>
@@ -51,7 +51,7 @@
     </products-list>
   </div>
   <hr />
-  <div class="col-3">
+  <div class="col-4 pl-5">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title text-dark font-weight-bold">Cart Items</h4>
