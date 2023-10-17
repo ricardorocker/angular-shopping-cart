@@ -15,8 +15,7 @@ This is a sample Angular shopping cart project that demonstrates the implementat
 
 You can view a live demo of this project.
 
-https://github.com/ricardorocker/UNSOLVED_ng-shopping-cart-app/assets/76121782/974061d2-9077-479b-b5f6-a7cf6f489476
-
+https://github.com/ricardorocker/angular-shopping-cart/assets/76121782/4e4eaa74-fd53-422d-b059-adfa480b813b
 
 
 ## Features
@@ -43,7 +42,7 @@ To install and run this project on your local machine, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone [https://github.com/ricardorocker/UNSOLVED_ng-shopping-cart-app.git]
+   git clone [https://github.com/ricardorocker/angular-shopping-cart.git]
 2. Navigate to the project directory:
 
    ```bash
