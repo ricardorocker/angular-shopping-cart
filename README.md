@@ -13,7 +13,11 @@ This is a sample Angular shopping cart project that demonstrates the implementat
 
 ## Demo
 
-You can view a live demo of this project [here](#).
+You can view a live demo of this project.
+
+https://github.com/ricardorocker/UNSOLVED_ng-shopping-cart-app/assets/76121782/974061d2-9077-479b-b5f6-a7cf6f489476
+
+
 
 ## Features
 
